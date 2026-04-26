@@ -38,8 +38,9 @@ body {
 
 #header h1 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 3rem;
     letter-spacing: 0.02em;
+    text-align: center;
 }
 
 h2,
@@ -49,11 +50,21 @@ p {
 }
 
 h2 {
-    margin-top: 1.75rem;
-    margin-bottom: 0.65rem;
-    font-size: 1.35rem;
-    color: #102a43;
-}
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+  }
+  
+  h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: black;
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
 
 h3 {
     margin-top: 1.25rem;
