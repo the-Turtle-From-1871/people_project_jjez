@@ -3,168 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROTC Excusals</title>
+    <title>ROTC Excusal System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="./static/css/styles.css" rel="stylesheet">
 </head>
 <body>
     <header id="header">
-        <h1>ROTC Excusal System</h1>
-        <div>
-          <a href="#problem">Problem</a>
-          <a href="#solution">Solution</a>
-          <a href="#impact">Impact</a>
-          <a href="#social-insights">Social Insights</a>
-          <a href="#team">Team</a>
+        <div class="nav-brand">
+            <div class="nav-logo">R</div>
+            <span>ROTC Excusal</span>
         </div>
+        <nav class="nav-links">
+            <a href="#problem">Problem</a>
+            <a href="#solution">Solution</a>
+            <a href="#impact">Impact</a>
+            <a href="#social-insights">Social Insights</a>
+            <a href="#team">Team</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </header>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>ROTC Excusal</h1>
-            <p>Streamlining ROTC excusal requests through a centralized, trackable system.</p>
-            <a href="#solution" class="btn">See How It Works</a>
-        </div>
-        <img src="/images/rotc.jpg" alt="ROTC">
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <span class="hero-badge">67-250 People Project</span>
+                <h1>ROTC Excusal<br>System</h1>
+                <p>Streamlining ROTC excusal requests through a centralized, trackable system that brings clarity to cadets and cadre alike.</p>
+                </div>
+            <div class="hero-img-wrapper">
+                <img src="./images/rotc.jpg" alt="ROTC">
+            </div>
+        </section>
+        <section id="problem" class="fade-in">
+            <h2>Problem</h2>
+            <p>The problem this project aims to address is the inefficiency experienced
+                by current ROTC cadets in being excused from ROTC events such as
+                Physical Training (PT), labs, and Field Training Exercises (FTXs).
+                Under the current system, cadets must complete a PDF form each time
+                they need to be excused from an activity. The PDF is sent up the chain
+                of command for approval from the cadre. However, individual cadets
+                almost never receive confirmation of their excusal, and the process is
+                unclear to regular cadets.</p>
+        </section>
 
-    <section id="problem">
-        <h2>Problem</h2>
-        <p>The problem this project aims to address is the inefficiency experienced
-            by current ROTC cadets in being excused from ROTC events such as 
-            Physical Training (PT), labs, and Field Training Exercises (FTXs). 
-            Under the current system, cadets must complete a PDF form each time 
-            they need to be excused from an activity. The PDF is sent up the chain 
-            of command for approval from the cadre. However, individual cadets 
-            almost never receive confirmation of their excusal, and the process is 
-            unclear to regular cadets.</p>
-    </section>
-    
-    <section id="solution">
-        <h2>Solution</h2>
-        <p>Our proposed solution is a web application that consolidates all relevant 
-            information on excusals into a single source of truth for cadre and 
-            cadets. The web app will feature separate dashboards for cadres and 
-            cadets, granting role-based privileges to make requests, approve or 
-            deny them, and access historical data. 
-            <br><br>
-            Currently, the visibility between levels of the cadet chain of command 
-            and between cadre is bad. Cadets rarely get confirmation that they've 
-            been officially excused, which leads to confusion, and sometimes people 
-            skip anyway. 
-            <br><br>
-            The new system will make the approval status extremely clear and will 
-            remove the unnecessary people in the middle who don't do anything except 
-            forward the message up the chain of command. Additionally, the cadre 
-            will be able to see all requests organized and consolidated in one 
-            place, rather than having to track multiple different messages. Finally, 
-            with database integration, we will be able to more effectively track 
-            historical data when compared to the current 90-day limit on past 
-            messages in a free Slack organization.</p>
+        <section id="solution" class="fade-in">
+            <h2>Solution</h2>
+            <p>Our proposed solution is a web application that consolidates all relevant
+                information on excusals into a single source of truth for cadre and
+                cadets. The web app will feature separate dashboards for cadres and
+                cadets, granting role-based privileges to make requests, approve or
+                deny them, and access historical data.</p>
+            <p>Currently, the visibility between levels of the cadet chain of command
+                and between cadre is bad. Cadets rarely get confirmation that they've
+                been officially excused, which leads to confusion, and sometimes people
+                skip anyway.</p>
+            <p>The new system will make the approval status extremely clear and will
+                remove the unnecessary people in the middle who don't do anything except
+                forward the message up the chain of command. Additionally, the cadre
+                will be able to see all requests organized and consolidated in one
+                place, rather than having to track multiple different messages. Finally,
+                with database integration, we will be able to more effectively track
+                historical data when compared to the current 90-day limit on past
+                messages in a free Slack organization.</p>
+        </section>
 
-    </section>
-    
-    <section id="wireframes">
-        <h2>Web App Examples</h2>
-    
-        <h3>Cadet View</h3>
-        <img src="./images/cadetView.png" alt="sample of what the dashboard would look like">
-        <p>Above is an example of the web app dashboard for a cadet. The dashboard 
-            allows the cadet to submit excusal requests, and see the history of 
-            their own excusal requests and their status (approved, denied, 
-            pending).</p>
+        <section id="wireframes" class="fade-in">
+            <h2>Web App Examples</h2>
+            <div class="wireframe-item">
+                <h3>Cadet View</h3>
+                <img src="./images/cadetView.png" alt="Cadet dashboard">
+                <p class="img-caption">Cadet dashboard — submit requests and track approval status in real time.</p>
+            </div>
+            <div class="wireframe-item">
+                <h3>Cadre View</h3>
+                <img src="./images/cadreView.png" alt="Cadre dashboard">
+                <p class="img-caption">Cadre dashboard — review, approve, or deny all incoming excusal requests in one place.</p>
+            </div>
+        </section>
 
-        <br>
-        
-        <h3>Cadre View</h3>
-        <img src="./images/cadreView.png" alt="sample cadre dashboard view">
-        <p>Above is an example of the web app dashboard for a cadet. The dashboard 
-            allows the cadet to submit excusal requests, and see the history of 
-            their own excusal requests and their status (approved, denied, 
-            pending).</p>
-    </section>
+        <section id="impact" class="fade-in">
+            <h2>Impact &amp; Implications</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <h3>Organizational Impact</h3>
+                    <ul>
+                        <li><strong>Reduced overhead:</strong> Cadre no longer track requests across email, Slack, or paper forms.</li>
+                        <li><strong>Increased accountability:</strong> Every request is logged, timestamped, and visible.</li>
+                        <li><strong>Improved decision-making:</strong> Historical data lets cadre identify patterns and make informed evaluations.</li>
+                        <li><strong>Standardization:</strong> All requests follow the same structured workflow.</li>
+                    </ul>
+                </div>
+                <div class="impact-card">
+                    <h3>Societal &amp; Behavioral Impact</h3>
+                    <ul>
+                        <li><strong>Encourages responsibility:</strong> Clear status visibility discourages skipping and promotes proactive communication.</li>
+                        <li><strong>Increases transparency:</strong> Cadets gain insight into decision outcomes.</li>
+                        <li><strong>Strengthens trust:</strong> A transparent process reduces miscommunication.</li>
+                        <li><strong>Digital transformation:</strong> Modern workflow practices enter traditionally manual systems.</li>
+                    </ul>
+                </div>
+                <div class="impact-card risks">
+                    <h3>Risks &amp; Consequences</h3>
+                    <ul>
+                        <li><strong>Leadership resistance:</strong> Some cadre may prefer informal communication.</li>
+                        <li><strong>Over-reliance:</strong> Cadets may assume submission guarantees approval.</li>
+                        <li><strong>Potential misuse:</strong> Excessive or low-quality requests without guardrails.</li>
+                        <li><strong>Equity concerns:</strong> Cadets with less technology access may be disadvantaged.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <section id="impact">
-        <h2>Impact & Implications</h2>
-      
-        <h3>Organizational Impact</h3>
-        <ul>
-          <li><strong>Reduced administrative overhead:</strong> Cadre no longer need to track excusal requests across email, Slack, or paper forms, saving time and reducing manual coordination.</li>
-          <li><strong>Increased accountability:</strong> Every request is logged, timestamped, and visible, creating a clear audit trail for both cadets and leadership.</li>
-          <li><strong>Improved decision-making:</strong> Centralized historical data allows cadre to identify patterns (e.g., frequent absences) and make more informed evaluations.</li>
-          <li><strong>Standardization across the chain of command:</strong> All excusal requests follow the same structured workflow, reducing ambiguity and inconsistency between units.</li>
-        </ul>
-      
-        <h3>Societal & Behavioral Impact</h3>
-        <ul>
-          <li><strong>Encourages responsibility among cadets:</strong> Clear visibility into request status discourages skipping and promotes proactive communication.</li>
-          <li><strong>Increases transparency in hierarchical systems:</strong> Cadets gain insight into decision outcomes, reducing uncertainty and perceived unfairness.</li>
-          <li><strong>Strengthens trust between cadets and cadre:</strong> A transparent process reduces miscommunication and improves relationships within the unit.</li>
-          <li><strong>Digital transformation of military-adjacent processes:</strong> Introduces modern workflow practices into traditionally manual systems.</li>
-        </ul>
-      
-        <h3>Risks & Unintended Consequences</h3>
-        <ul>
-          <li><strong>Resistance from leadership:</strong> Some cadre may prefer informal communication and view the system as unnecessary or restrictive.</li>
-          <li><strong>Over-reliance on the system:</strong> Cadets may assume submission guarantees approval, reducing personal responsibility if not clearly communicated.</li>
-          <li><strong>Potential misuse:</strong> Cadets could submit excessive or low-quality requests if guardrails are not implemented.</li>
-          <li><strong>Equity concerns:</strong> Cadets with less access to technology may be disadvantaged if the system becomes mandatory.</li>
-        </ul>
-    </section>
+        <section id="competitive-advantage" class="fade-in">
+            <h2>Competitive Advantage</h2>
+            <div class="advantage-grid">
+                <div class="advantage-card">
+                    <div class="adv-icon">🎯</div>
+                    <h3>Context-Specific Design</h3>
+                    <p>Purpose built around the U.S. Army ROTC organizational hierarchy, delivering a zero-ambiguity user experience at every level of the chain of command.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="adv-icon">⚡</div>
+                    <h3>Frictionless Adoption</h3>
+                    <p>Scoped to solve one high-frequency, high-friction administrative pain point with surgical precision and an exceptionally low learning curve.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="adv-icon">☁️</div>
+                    <h3>Zero-Infrastructure Access</h3>
+                    <p>Lightweight, cloud-deployable solution requiring no on-premise IT infrastructure — viable for any university ROTC program regardless of IT maturity.</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="adv-icon">🔗</div>
+                    <h3>Network Effects</h3>
+                    <p>As adoption grows across battalions, aggregated data improves benchmarking. Deep integration creates high switching costs and structural lock-in over time.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="competitive-advantage">
-        <h2>Competitive Advantage</h2>
-        <h3>Context-Specific Design &amp; Domain Alignment</h3>
-        <p>Unlike generic workflow management tools, the ROTC Excusal System is purpose built around the U.S. Army ROTC organizational hierarchy, delivering a <strong>zero ambiguity user experience</strong> at every level of the chain of command. By faithfully mirroring real ROTC roles, permissions, and standard operating procedures, the platform achieves <strong>deep domain fit</strong>, eliminating the configuration burden that plagues horizontal SaaS alternatives. Each user sees a role-specific dashboard tailored to their operational scope, reducing cognitive load and accelerating time-to-value from day one.</p>
-        <h3>Problem-Specific Scope &amp; Frictionless Adoption</h3>
-        <p>The system is deliberately scoped to solve one high frequency, high friction administrative pain point with surgical precision. This <strong>narrow vertical focus</strong> yields an exceptionally low learning curve, enabling cadets and cadre to derive immediate utility without extensive onboarding or IT support. By removing structural information asymmetry between cadets and cadre, the platform converts a historically opaque process into a <strong>transparent, auditable workflow</strong>, directly reducing unexcused absences and administrative overhead.</p>
-        <h3>Zero-Infrastructure Accessibility</h3>
-        <p>The platform is architected as a <strong>lightweight, cloud deployable solution</strong> requiring no on premise IT infrastructure, making it viable for any university ROTC program regardless of institutional IT maturity. This <strong>near zero total cost of adoption</strong> dramatically lowers the barrier to entry, positioning the system as a <strong>high ROI and low risk procurement decision</strong> for program administrators.</p>
-        <h3>Network Effects &amp; Structural Lock In</h3>
-        <p>The platform exhibits <strong>cross side network effects</strong>: as adoption grows across battalions and programs, aggregated data improves benchmarking capabilities and feature development velocity. Each new institutional adopter contributes to a stronger, more resilient ecosystem, which generates <strong>increasing returns to scale</strong>. Over time, deep integration with ROTC workflows creates <strong>high switching costs and structural lock-in</strong>, building durable competitive moat through habitual usage and institutional data accumulation.</p>
-        <br>
-    </section>
+        <section id="social-insights" class="fade-in">
+            <h2>Social Insights &amp; Risk Analysis</h2>
+            <div class="risk-list">
+                <div class="risk-item">
+                    <div class="risk-header">
+                        <span class="risk-num">01</span>
+                        <h3>Organizational Resistance &amp; Change Management</h3>
+                    </div>
+                    <div class="risk-body">
+                        <div class="risk-threat">
+                            <strong>Threat</strong>
+                            <p>Stakeholders may perceive the system as undermining established chain of command protocols — a critical concern in military-adjacent organizations where hierarchical integrity is a core cultural value.</p>
+                        </div>
+                        <div class="risk-mitigation">
+                            <strong>Strategic Mitigation</strong>
+                            <p>The system employs a <em>transparency-first governance model</em> where all requests still flow through the established approval hierarchy, framing the platform as an <em>enabler</em> of institutional authority rather than a disruptor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="risk-item">
+                    <div class="risk-header">
+                        <span class="risk-num">02</span>
+                        <h3>Onboarding Friction &amp; Implementation Costs</h3>
+                    </div>
+                    <div class="risk-body">
+                        <div class="risk-threat">
+                            <strong>Threat</strong>
+                            <p>High initial setup complexity and data migration overhead can suppress adoption rates, particularly among resource-constrained university programs without dedicated IT personnel.</p>
+                        </div>
+                        <div class="risk-mitigation">
+                            <strong>Strategic Mitigation</strong>
+                            <p>A guided onboarding experience with multi-format data import ensures time to first value is minimized, supporting smoother diffusion of innovation across early and late majority adopter segments.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="risk-item">
+                    <div class="risk-header">
+                        <span class="risk-num">03</span>
+                        <h3>Structural Heterogeneity Across Programs</h3>
+                    </div>
+                    <div class="risk-body">
+                        <div class="risk-threat">
+                            <strong>Threat</strong>
+                            <p>Non-standard ROTC organizational structures at different universities may create platform-fit mismatches, reducing the generalizability of a one-size-fits-all solution.</p>
+                        </div>
+                        <div class="risk-mitigation">
+                            <strong>Strategic Mitigation</strong>
+                            <p>Custom workflow configuration allows program administrators to adapt the system to their unique organizational topology without requiring engineering intervention, preserving scalability while accommodating institutional variance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="social-insights">
-        <h2>Social Insights &amp; Risk Analysis</h2>
-        <h3>Risk 1: Organizational Resistance &amp; Change Management</h3>
-        <p><strong>Threat:</strong> Stakeholders may perceive the system as a mechanism to circumvent or undermine established chain of command protocols, a critical concern in military adjacent organizations where hierarchical integrity is a core cultural value.</p>
-        <p><strong>Strategic Mitigation:</strong> The system employs a <strong>transparency first governance model</strong>, in which all excusal requests still flow through the established approval hierarchy with no lateral bypass capability. This design choice directly addresses <strong>organizational adoption resistance</strong> by framing the platform as an <em>enabler</em> of institutional authority rather than a disruptor, increasing <strong>perceived legitimacy</strong> and lowering internal friction during rollout.</p>
-        <h3>Risk 2: Onboarding Friction &amp; Implementation Costs</h3>
-        <p><strong>Threat:</strong> High initial setup complexity and data migration overhead can suppress adoption rates, particularly among resource constrained university programs without dedicated IT personnel.</p>
-        <p><strong>Strategic Mitigation:</strong> A <strong>guided onboarding experience</strong> with multi format data import (reducing migration friction) ensures that <strong>time to first value is minimized</strong>. This directly addresses the <strong>implementation dip</strong> common in enterprise software adoption curves, supporting a smoother <strong>diffusion of innovation</strong> across early and late majority adopter segments.</p>
-        <h3>Risk 3: Structural Heterogeneity Across Programs</h3>
-        <p><strong>Threat:</strong> Non standard or irregular ROTC organizational structures at different universities may create <strong>platform fit mismatches</strong>, reducing the generalizability of a one size fits all solution.</p>
-        <p><strong>Strategic Mitigation:</strong> <strong>Custom workflow configuration</strong> allows program administrators to adapt the system to their unique organizational topology without requiring engineering intervention, preserving <strong>scalability</strong> while accommodating <strong>institutional variance</strong>. This modularity supports long term <strong>market expansion</strong> across diverse university contexts.</p>
-    </section>
+        <section id="social-impact-theory" class="fade-in">
+            <h2>Why People Will Use It</h2>
+            <div class="theory-grid">
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <strong>Technology Acceptance Model</strong>
+                    <p>Cadets benefit from high perceived usefulness — tracking excusal status in real time — and high perceived ease of use through a simple, streamlined online workflow.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <strong>Platform Theory</strong>
+                    <p>The system connects cadets and cadre within a shared digital platform, creating bilateral value. As the user base grows, platform utility compounds through stronger network effects and richer historical data.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏛️</div>
+                    <strong>Socio-Technical Systems Theory</strong>
+                    <p>The application retains the military hierarchical structure where cadre must approve cadet excusals, ensuring the technical system is fully aligned with the existing social and organizational framework.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="social-impact-theory">
-        <h2>Why People Will Use It</h2>
-        <div class="card">
-            <strong>Technology Acceptance Model: </strong> 
-            <p>
-                Cadets benefit from high perceived usefulness, they can easily track excusal request status in real time, and high perceived ease of use through a simple, streamlined online excusal request and accept system.
-            </p>
-        </div>
-        <div class="card">
-            <strong>Platform Theory: </strong>
-            <p>The system connects cadets and cadre within a shared digital platform, creating bilateral value through a standardized excusal management loop. As the user base grows, platform utility compounds through stronger network effects and richer historical data.</p>
-        </div>
-        <div class="card">
-            <strong>Socio Technical Systems Theory: </strong>
-            <p>The application retains the military hierarchical structure where a cadre needs to approve the excusal from the cadet, ensuring that the technical system is fully aligned with the existing social and organizational framework.</p>
-        </div>
-    </section>
+        <section id="team" class="fade-in">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">EH</div>
+                    <strong>Eugene Hwang</strong>
+                    <span class="team-role">Product Manager</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">JY</div>
+                    <strong>Joshua Yang</strong>
+                    <span class="team-role">Tech Lead</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">JK</div>
+                    <strong>Joohan Kim</strong>
+                    <span class="team-role">Content Lead</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">ZS</div>
+                    <strong>Zeeshan Shariff</strong>
+                    <span class="team-role">Design Lead</span>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <section id="team">
-        <h2>Our Team</h2>
-        <p><strong>Eugene Hwang</strong> - Product Manager</p>
-        <p><strong>Joshua Yang</strong> - Tech Lead</p>
-        <p><strong>Joohan Kim</strong> - Content Lead</p>
-        <p><strong>Zeeshan Shariff</strong> - Design Lead</p>
-    </section>
-    
     <footer>
-        <p>ROTC Excusal System - 67250 People Project</p>
+        <div class="footer-inner">
+            <p class="footer-title">ROTC Excusal System</p>
+            <p>67-250 People Project &mdash; Carnegie Mellon University</p>
+            <nav class="footer-nav">
+                <a href="#problem">Problem</a>
+                <a href="#solution">Solution</a>
+                <a href="#impact">Impact</a>
+                <a href="#social-insights">Social Insights</a>
+                <a href="#team">Team</a>
+            </nav>
+        </div>
     </footer>
+
+    <script src="./static/js/script.js"></script>
 </body>
 </html>
