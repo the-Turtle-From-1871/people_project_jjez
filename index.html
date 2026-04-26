@@ -7,61 +7,127 @@
     <link href="./static/css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <div id="header">
+    <header id="header">
         <h1>ROTC Excusal System</h1>
-    </div>
+        <div>
+          <a href="#problem">Problem</a>
+          <a href="#solution">Solution</a>
+          <a href="#impact">Impact</a>
+          <a href="#wireframes">Wireframes</a>
+        </div>
+    </header>
+
+    <!-- <div id="header">
+        <h1>ROTC Excusal System</h1>
+    </div> -->
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>ROTC Excusal</h1>
+            <p>Streamlining ROTC excusal requests through a centralized, trackable system.</p>
+            <a href="#solution" class="btn">See How It Works</a>
+        </div>
+        <img src="https://via.placeholder.com/400x300" alt="App mockup">
+    </section>
     
     <h2>Executive Summary</h2>
     <p>blah blah blah</p>
 
-     <h2>Problem</h2>
-     <p>The problem this project aims to address is the inefficiency experienced
-         by current ROTC cadets in being excused from ROTC events such as 
-         Physical Training (PT), labs, and Field Training Exercises (FTXs). 
-        Under the current system, cadets must complete a PDF form each time 
-        they need to be excused from an activity. The PDF is sent up the chain 
-        of command for approval from the cadre. However, individual cadets 
-        almost never receive confirmation of their excusal, and the process is 
-        unclear to regular cadets.</p>
-
-    <h2>Solution</h2>
-    <p>Our proposed solution is a web application that consolidates all relevant 
-        information on excusals into a single source of truth for cadre and 
-        cadets. The web app will feature separate dashboards for cadres and 
-        cadets, granting role-based privileges to make requests, approve or 
-        deny them, and access historical data. 
-        <br><br>
-        Currently, the visibility between levels of the cadet chain of command 
-        and between cadre is bad. Cadets rarely get confirmation that they've 
-        been officially excused, which leads to confusion, and sometimes people 
-        skip anyway. 
-        <br><br>
-        The new system will make the approval status extremely clear and will 
-        remove the unnecessary people in the middle who don’t do anything except 
-        forward the message up the chain of command. Additionally, the cadre 
-        will be able to see all requests organized and consolidated in one 
-        place, rather than having to track multiple different messages. Finally, 
-        with database integration, we will be able to more effectively track 
-        historical data when compared to the current 90-day limit on past 
-        messages in a free Slack organization.</p>
-
-    <h2>Web App Examples</h2>
+    <section id="problem">
+        <h2>Problem</h2>
+        <p>The problem this project aims to address is the inefficiency experienced
+            by current ROTC cadets in being excused from ROTC events such as 
+            Physical Training (PT), labs, and Field Training Exercises (FTXs). 
+            Under the current system, cadets must complete a PDF form each time 
+            they need to be excused from an activity. The PDF is sent up the chain 
+            of command for approval from the cadre. However, individual cadets 
+            almost never receive confirmation of their excusal, and the process is 
+            unclear to regular cadets.</p>
+    </section>
     
-    <h3>Cadet View</h3>
-    <img src="./images/cadetView.png" alt="sample of what the dashboard would look like">
-    <p>Above is an example of the web app dashboard for a cadet. The dashboard 
-        allows the cadet to submit excusal requests, and see the history of 
-        their own excusal requests and their status (approved, denied, 
-        pending).</p>
+    <section id="solution">
+        <h2>Solution</h2>
+        <p>Our proposed solution is a web application that consolidates all relevant 
+            information on excusals into a single source of truth for cadre and 
+            cadets. The web app will feature separate dashboards for cadres and 
+            cadets, granting role-based privileges to make requests, approve or 
+            deny them, and access historical data. 
+            <br><br>
+            Currently, the visibility between levels of the cadet chain of command 
+            and between cadre is bad. Cadets rarely get confirmation that they've 
+            been officially excused, which leads to confusion, and sometimes people 
+            skip anyway. 
+            <br><br>
+            The new system will make the approval status extremely clear and will 
+            remove the unnecessary people in the middle who don’t do anything except 
+            forward the message up the chain of command. Additionally, the cadre 
+            will be able to see all requests organized and consolidated in one 
+            place, rather than having to track multiple different messages. Finally, 
+            with database integration, we will be able to more effectively track 
+            historical data when compared to the current 90-day limit on past 
+            messages in a free Slack organization.</p>
 
-    <br>
+    </section>
     
-    <h3>Cadre View</h3>
-    <img src="./images/cadreView.png" alt="sample cadre dashboard view">
-    <p>Above is an example of the web app dashboard for a cadet. The dashboard 
-        allows the cadet to submit excusal requests, and see the history of 
-        their own excusal requests and their status (approved, denied, 
-        pending).</p>
+    <section id="wireframes">
+        <h2>Web App Examples</h2>
+    
+        <h3>Cadet View</h3>
+        <img src="./images/cadetView.png" alt="sample of what the dashboard would look like">
+        <p>Above is an example of the web app dashboard for a cadet. The dashboard 
+            allows the cadet to submit excusal requests, and see the history of 
+            their own excusal requests and their status (approved, denied, 
+            pending).</p>
 
+        <br>
+        
+        <h3>Cadre View</h3>
+        <img src="./images/cadreView.png" alt="sample cadre dashboard view">
+        <p>Above is an example of the web app dashboard for a cadet. The dashboard 
+            allows the cadet to submit excusal requests, and see the history of 
+            their own excusal requests and their status (approved, denied, 
+            pending).</p>
+    </section>
+
+    <section id="impact">
+        <h2>Impact & Implications</h2>
+      
+        <h3>Organizational</h3>
+        <ul>
+          <li>Improved efficiency</li>
+          <li>Standardized workflows</li>
+        </ul>
+      
+        <h3>Societal</h3>
+        <ul>
+          <li>Encourages responsibility</li>
+        </ul>
+      
+        <h3>Risks</h3>
+        <ul>
+          <li>Resistance to change</li>
+          <li>System misuse</li>
+        </ul>
+    </section>
+
+    <section class="gray">
+        <h2>Why People Will Use It</h2>
+      
+        <p><strong>Sociotechnical Systems:</strong> Aligns people and processes</p>
+        <p><strong>Diffusion of Innovation:</strong> Adoption spreads through cadet groups</p>
+        <p><strong>Incentives:</strong> Clear feedback encourages usage</p>
+    </section>
+
+    <section class="gray">
+        <h2>Why People Will Use It</h2>
+      
+        <p><strong>Technology Acceptance Model: </strong> Aligns people and processes</p>
+        <p><strong>Platform Theory: </strong> Adoption spreads through cadet groups</p>
+        <p><strong>Socio-technical Systems Theory: </strong> Clear feedback encourages usage</p>
+    </section>
+    
+    <footer>
+        <p>ROTC Excusal System - 67250 People Project</p>
+    </footer>
 </body>
 </html>

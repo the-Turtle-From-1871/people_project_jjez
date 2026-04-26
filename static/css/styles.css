@@ -1,39 +1,116 @@
-html {
-    /* background-color: #F6F3EC; */
-    background-color: white;
-    font-family: "Lucida Console", "Courier New", monospace;
+:root {
+    --bg: #f7f8fa;
+    --surface: #ffffff;
+    --text: #1f2933;
+    --muted: #52606d;
+    --accent: #2d6a6a;
+    --border: #d9e2ec;
 }
 
-h2, h3, p {
-    margin-left: 1vw;
-    margin-right: 1vw;
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--bg);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+}
+
+body {
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 2rem 1.25rem 3rem;
+    line-height: 1.65;
 }
 
 #header {
-    background-color: #DFE8E4;
-    color: #1F2A28;
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
-    padding: 5px 1vw;
-    border-radius: 1vw;
+    background-color: var(--surface);
+    color: var(--accent);
+    margin: 0 0 2rem;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
 }
 
 #header h1 {
     margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 0.02em;
+}
+
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+h2 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.65rem;
+    font-size: 1.35rem;
+    color: #102a43;
+}
+
+h3 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.1rem;
+    color: #243b53;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--muted);
 }
 
 img {
-    width: 60vw;
+    display: block;
+    width: 100%;
+    max-width: 760px;
     height: auto;
-    margin-left: 1vw;
-    border-radius: 2vw;
-    border: #DFE8E4 0.5vw solid;
+    margin: 0.5rem 0 0.85rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero img {
+    width: 400px;
+    border-radius: 10px;
+    background: #eee;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #111;
+    color: white;
 }
 
 @media screen and (max-width: 768px) {
-    img {
-        width: 90vw;
-        height: auto;
+    body {
+        padding: 1.25rem 0.9rem 2rem;
+    }
+
+    #header h1 {
+        font-size: 1.45rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
     }
 }
