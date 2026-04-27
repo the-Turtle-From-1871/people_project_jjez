@@ -27,6 +27,7 @@ html {
 
 body {
     line-height: 1.7;
+    overscroll-behavior: contain;
 }
 
 /* ===== NAVIGATION ===== */

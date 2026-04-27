@@ -14,45 +14,62 @@ document.addEventListener('DOMContentLoaded', function () {
     );
     fadeEls.forEach((el) => fadeObserver.observe(el));
 
-    // Active nav link highlighting
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('main section[id]');
+    const navMenu = document.querySelector('.nav-links');
+    const navLinks = navMenu ? navMenu.querySelectorAll('a') : [];
 
-    const navObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    navLinks.forEach((link) => link.classList.remove('active'));
-                    const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
-                    if (active) active.classList.add('active');
-                }
-            });
-        },
-        { threshold: 0.35 }
-    );
-    sections.forEach((section) => navObserver.observe(section));
+    /**
+     * Highlights the nav link for the section currently at/above the header line.
+     * `window.location.href === link.href` only ran once and never updates while you scroll,
+     * and the hash does not change when you scroll by wheel/touch — so we use scroll position.
+     */
+    function activeNav(){
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            if (window.location.href === link.href) {
+                link.classList.add("active");
+            }
+            else{
+                link.classList.remove("active");
+            }
+        });
+    }
+
+    let navScrollScheduled = false;
+    function onScrollOrResize() {
+        if (navScrollScheduled) return;
+        navScrollScheduled = true;
+        requestAnimationFrame(() => {
+            navScrollScheduled = false;
+            activeNav();
+        });
+    }
+
+    window.addEventListener('scroll', onScrollOrResize, { passive: true });
+    window.addEventListener('resize', onScrollOrResize);
+    window.addEventListener('hashchange', activeNav);
+    activeNav();
 
     // Hamburger menu toggle
     const toggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-links');
 
     if (toggle && navMenu) {
         toggle.addEventListener('click', () => {
             const isOpen = navMenu.classList.toggle('open');
             toggle.classList.toggle('open', isOpen);
             toggle.setAttribute('aria-expanded', isOpen);
+            requestAnimationFrame(activeNav);
         });
 
-        // Close menu when a link is clicked
         navMenu.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('open');
                 toggle.classList.remove('open');
                 toggle.setAttribute('aria-expanded', false);
+                requestAnimationFrame(activeNav);
             });
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!toggle.contains(e.target) && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('open');
